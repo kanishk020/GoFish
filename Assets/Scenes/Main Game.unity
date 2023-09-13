@@ -3306,7 +3306,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - Name: FootWood
     clip: {fileID: 8300000, guid: 701f7be4684c1ee42bd62852d1d87b98, type: 3}
-    volume: 0.6
+    volume: 0.4
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -4500,7 +4500,7 @@ MonoBehaviour:
   - {fileID: 6240985388589385556, guid: c8479b477eb20fc4fbb0c7e47b6d5083, type: 3}
   - {fileID: 3577257446566928273, guid: cc4045173313e404e88ccf6830496786, type: 3}
   numObjects: 70
-  areaSize: {x: 150, y: 150}
+  areaSize: {x: 100, y: 100}
   spwn_pos: {fileID: 360696989}
 --- !u!4 &824317080
 Transform:
@@ -8400,7 +8400,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563810425}
-  m_LocalRotation: {x: 0.11610552, y: 0.4927973, z: -0.066546924, w: 0.85979176}
+  m_LocalRotation: {x: 0.11610552, y: 0.49279732, z: -0.066546924, w: 0.85979176}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.4154283, y: 1.4154283, z: 1.4154283}
   m_Children:

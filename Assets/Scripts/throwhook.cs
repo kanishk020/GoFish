@@ -11,6 +11,7 @@ public class throwhook : MonoBehaviour
     public GameObject water;
     public GameObject RHand;
     private Rigidbody objectthrow;
+    public GameObject RightBW;
     private int layercoll = 1 << 6;
     
 
@@ -37,7 +38,7 @@ public class throwhook : MonoBehaviour
 
     public void Start()
     {
-
+        RightBW.SetActive(false);
         
         readyToThrow = true;
         objectthrow = objectToThrow.GetComponent<Rigidbody>();
@@ -72,17 +73,22 @@ public class throwhook : MonoBehaviour
             
             Timer.StopTimer("bite");
             Reeling();
-            
+            RightBW.SetActive(true);
+
 
         }
         if(Input.GetKeyUp(KeyCode.Mouse1) && readyToThrow == false && isSit == true)
         {
             animator.SetBool("IdleReel", true);
             FindObjectOfType<SoundManager>().Stop("Reelin");
+            RightBW.SetActive(false);
         }
         
+        
+        
+        
        
-
+        
 
         lineRenderer.SetPosition(0, sourcepoint.position);
         lineRenderer.SetPosition(1, objectthrow.position);

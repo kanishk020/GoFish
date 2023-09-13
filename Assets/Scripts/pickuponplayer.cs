@@ -10,6 +10,10 @@ public class pickuponplayer : MonoBehaviour
     public GameObject HUtcam;
     public GameObject pickupObject;
     public GameObject SitText;
+    public GameObject leftC;
+
+
+
     public bool applyRootMotion;
     public GameObject camaim;
     public GameObject camfollow;
@@ -23,7 +27,7 @@ public class pickuponplayer : MonoBehaviour
 
     private bool isSitting;
 
-    private bool situi;
+    
 
     Animator anim;
 
@@ -179,5 +183,9 @@ public class pickuponplayer : MonoBehaviour
     public void ReelingSound() 
     {
         FindObjectOfType<SoundManager>().Play("Reelin");
+    }
+    public void leftClickON()
+    {
+        leftC.SetActive(true);
     }
 }

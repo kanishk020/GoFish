@@ -21,6 +21,13 @@ public class CollisiononWater : MonoBehaviour
     public GameObject catchSystem;
     public GameObject fishslide;
     public GameObject CaughtUI;
+   
+    public GameObject leftC;
+    public GameObject rightC;
+    public GameObject rightCW;
+    
+    
+
     public List<GameObject> fishlist;
     
     public GameObject Fishshow;
@@ -76,8 +83,8 @@ public class CollisiononWater : MonoBehaviour
         noCatchAnim = Animator.StringToHash("Base Layer.No Fish");
         FishRotAnim = Animator.StringToHash("Base Layer.UI_FIsh_Rot");
 
-        
-
+        leftC.SetActive(false);
+        rightC.SetActive(false);
         Nib.GetComponent<CapsuleCollider>().enabled = false;
         fishui = fishslide.GetComponent<Image>();
         splashpos.SetActive(false);
@@ -119,6 +126,7 @@ public class CollisiononWater : MonoBehaviour
             CatchsysBool = true;
 
             catchSystem.SetActive(true);
+            
             catchspeed = RandomFish(i);
             SlideAnimator.speed = catchspeed; 
             SlideAnimator.Play(slideanim);
@@ -250,6 +258,10 @@ public class CollisiononWater : MonoBehaviour
             HookRb.transform.SetParent(null);
             Nib.GetComponent<CapsuleCollider>().enabled = true;
             Timer.Create(enablebite, catchtime,"bite");
+            leftC.SetActive(false);
+            rightC.SetActive(true);
+            rightCW.SetActive(false);
+
         }
         if (other.gameObject.tag.Equals("nib"))
         {
@@ -260,6 +272,13 @@ public class CollisiononWater : MonoBehaviour
             biteui.SetActive(false);
             catchSystem.SetActive(false);
             CaughtUI.SetActive(false);
+
+
+
+            rightC.SetActive(false);
+
+            
+
 
             Destroy(InsOBJonUI);
             Destroy( InsOBJonhook);
@@ -356,7 +375,7 @@ public class CollisiononWater : MonoBehaviour
         biteui.SetActive(true);
         uiAnim.Play(biteanim);
     }
-
+    
 
     
 

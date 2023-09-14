@@ -211,6 +211,8 @@ public class CollisiononWater : MonoBehaviour
     {
         Debug.Log("Game Saved");
         SaveSystem.SaveFish(this);
+        
+
     }
     public void loadfish()
     {
@@ -223,9 +225,10 @@ public class CollisiononWater : MonoBehaviour
         for(int i  = 0; i < 7; i++)
         {
             FishSaved[i] = data.fishdata[i];
-            
 
+            
         }
+
 
     }
 

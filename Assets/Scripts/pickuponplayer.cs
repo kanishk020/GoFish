@@ -27,7 +27,7 @@ public class pickuponplayer : MonoBehaviour
 
     private bool isSitting;
 
-    
+
 
     Animator anim;
 
@@ -36,59 +36,59 @@ public class pickuponplayer : MonoBehaviour
         Rodonplayer.SetActive(false);
         PickUpText.SetActive(false);
         SitText.SetActive(false);
-        
+
         anim = GetComponent<Animator>();
         camaim.SetActive(false);
-        
+
         isSitting = false;
 
-        
+
 
 
     }
 
     void Update()
     {
-        
+
         if (PickUpText.activeSelf && Input.GetKey(KeyCode.E))
         {
 
             anim.SetTrigger("keypressE");
 
         }
-        if (Rodonplayer.activeSelf && SitText.activeSelf && Input.GetKeyDown(KeyCode.Q) && isSitting==false)
+        if (Rodonplayer.activeSelf && SitText.activeSelf && Input.GetKeyDown(KeyCode.Q) && isSitting == false)
         {
 
 
 
 
             Player.transform.SetPositionAndRotation(PierLoc.transform.position, PierLoc.transform.rotation);
-             
-            
+
+
             anim.SetBool("KeypressQ", true);
-            
-            
-            
+
+
+
             this.GetComponent<CharacterController>().enabled = false;
-            
-           camfollow.SetActive(false);
-           camaim.SetActive (true);
-            
+
+            camfollow.SetActive(false);
+            camaim.SetActive(true);
+
 
         }
-        if(Rodonplayer.activeSelf && SitText.activeSelf && Input.GetKeyDown(KeyCode.Q) && isSitting == true)
+        if (Rodonplayer.activeSelf && SitText.activeSelf && Input.GetKeyDown(KeyCode.Q) && isSitting == true)
         {
-            
+
             anim.SetBool("KeypressQ", false);
 
             isSitting = false;
-            
+
             camfollow.SetActive(true);
             camaim.SetActive(false);
 
 
         }
-        
+
 
 
     }
@@ -103,7 +103,7 @@ public class pickuponplayer : MonoBehaviour
         {
             HUtcam.SetActive(true);
             camaim.SetActive(false);
-            
+
         }
         if (other.gameObject.tag == "Pier" && Rodonplayer.activeSelf)
         {
@@ -134,13 +134,13 @@ public class pickuponplayer : MonoBehaviour
         if (other.gameObject.tag == "door")
         {
 
-            
+
             HUtcam.SetActive(false);
             camfollow.SetActive(true);
             camaim.SetActive(false);
         }
     }
-    
+
 
 
     private void PickupObject()
@@ -156,31 +156,32 @@ public class pickuponplayer : MonoBehaviour
 
         isSitting = true;
         obj.SITCONF();
-         
-        
+
+
 
     }
     private void EnableController()
     {
-        
+
         this.GetComponent<CharacterController>().enabled = true;
-        
-        
+        leftC.SetActive(false);
+
+
     }
     public void SitTextenable()
     {
         SitText.SetActive(true);
         SitCoronaLoc.SetActive(true);
-        
+
 
     }
     private void SitTextdisable()
     {
         SitText.SetActive(false);
-        
+
         SitCoronaLoc.SetActive(false);
     }
-    public void ReelingSound() 
+    public void ReelingSound()
     {
         FindObjectOfType<SoundManager>().Play("Reelin");
     }
@@ -188,4 +189,6 @@ public class pickuponplayer : MonoBehaviour
     {
         leftC.SetActive(true);
     }
+    
+
 }

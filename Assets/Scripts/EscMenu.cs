@@ -6,12 +6,16 @@ using UnityEngine;
 public class EscMenu : MonoBehaviour
 {
     public static bool ispaused = false;
-    
+    public GameObject Uiload;
+    public GameObject UiSave;
+     
 
     public GameObject pauseMenuUI;
 
     private void Start()
     {
+        Uiload.SetActive(false);
+        UiSave.SetActive(false);
         pauseMenuUI.SetActive(false);
     }
 
@@ -41,12 +45,16 @@ public class EscMenu : MonoBehaviour
     }
     public void Resume()
     {
+        
+
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         ispaused = false;
     }
     private void Pause()
     {
+        Uiload.SetActive(false);
+        UiSave.SetActive(false);
         pauseMenuUI.SetActive(true);
 
         Time.timeScale = 0f;
@@ -58,4 +66,16 @@ public class EscMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void Loaded()
+    {
+        Uiload.SetActive(true);
+        UiSave.SetActive(false);
+
+    }
+
+    public void Saved()
+    {
+        UiSave.SetActive(true);
+        Uiload.SetActive(false);
+    }
 }

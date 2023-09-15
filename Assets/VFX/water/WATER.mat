@@ -11,8 +11,8 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: 9a125999ea3eb9a4ea2a40b83b533db4, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 1
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
@@ -64,11 +64,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _mainnorm:
-        m_Texture: {fileID: 2800000, guid: abebf749fd22d134094f3db14e9d4363, type: 3}
+        m_Texture: {fileID: 2800000, guid: 76198441dfea09744b062063c4c59571, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _secnorm:
-        m_Texture: {fileID: 2800000, guid: abebf749fd22d134094f3db14e9d4363, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2db6171655b15004aad79f6269677b2a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -85,7 +85,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_588689f41b73491da93b981f79274237: 2.74
-    - Vector1_a2544cca8fb5415590da60f61a1f04e9: 1.28
+    - Vector1_a2544cca8fb5415590da60f61a1f04e9: 2
     - _AlphaClip: 0
     - _Blend: 0
     - _BlendOp: 0
@@ -127,12 +127,12 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
-    - _depth: 4.6
-    - _normalStrength: 0.37
-    - _smooth: 0.6
+    - _depth: 25
+    - _normalStrength: 0.23
+    - _smooth: 0.51
     m_Colors:
-    - Color_c32d6d6531ff4e0ab9ae32ab1cc4e5bf: {r: 0, g: 0.654902, b: 0.8313726, a: 0.3882353}
-    - Color_ddc39d3677184700b1b7133d5c0cb72e: {r: 0.18431373, g: 0.63529414, b: 0.6431373, a: 0.9254902}
+    - Color_c32d6d6531ff4e0ab9ae32ab1cc4e5bf: {r: 0, g: 0.654902, b: 0.8313726, a: 0.5882353}
+    - Color_ddc39d3677184700b1b7133d5c0cb72e: {r: 0, g: 0.654902, b: 0.8313726, a: 0.78039217}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
     - _CameraFadeParams: {r: 0, g: 0, b: 0, a: 0}

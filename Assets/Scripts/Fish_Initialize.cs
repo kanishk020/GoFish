@@ -10,6 +10,8 @@ public class Fish_Initialize : MonoBehaviour
 
     private GameObject[] gameObjects;
 
+    
+
     private void Start()
     {
         gameObjects = new GameObject[numObjects];
@@ -27,8 +29,8 @@ public class Fish_Initialize : MonoBehaviour
 
             gameObjects[i].GetComponent<PrefabMOV>().Initialize(Random.Range(6f, 40f),
                                                                      Random.Range(0.75f, 7f),
-                                                                     Random.Range(0f, 360f),
-                                                                     Random.Range(0f, 8));
+                                                                     Random.Range(0f, 180f),
+                                                                     Random.Range(0, 8));
         }
         for (int i = 0; i < 2; i++)
         {
@@ -44,8 +46,8 @@ public class Fish_Initialize : MonoBehaviour
             gameObjects[i] = Instantiate(shark, randomPosition, Quaternion.identity, spwn_pos.transform);
             gameObjects[i].GetComponent<PrefabMOV>().Initialize(Random.Range(10f, 90f),
                                                                      Random.Range(3f, 10f),
-                                                                     Random.Range(0f, 360f),
-                                                                     Random.Range(0f, 15));
+                                                                     Random.Range(0f, 180f),
+                                                                     Random.Range(0, 4));
         }
 
         for (int i = 0; i < 10; i++)
@@ -54,7 +56,7 @@ public class Fish_Initialize : MonoBehaviour
             GameObject Bird = objectPrefabs[8];
 
             Vector3 randomPosition = new Vector3(Random.Range(-areaSize.x/4, areaSize.x/4),
-                                                 Random.Range(17f,22f),
+                                                 Random.Range(12f,17f),
                                                  Random.Range(-areaSize.y/4, areaSize.y / 4));
             randomPosition += spwn_pos.transform.position;
 
@@ -62,8 +64,14 @@ public class Fish_Initialize : MonoBehaviour
             gameObjects[i] = Instantiate(Bird, randomPosition, Quaternion.identity, spwn_pos.transform);
             gameObjects[i].GetComponent<PrefabMOV>().Initialize(Random.Range(10f, 90f),
                                                                      Random.Range(1f, 8f),
-                                                                     Random.Range(0f, 360f),
-                                                                     Random.Range(0f, 15));
+                                                                     Random.Range(0f, 180f),
+                                                                     Random.Range(0f, 2));
         }
     }
+    
+
+
+
+
+    
 }

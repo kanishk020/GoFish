@@ -7,6 +7,8 @@ public class PrefabMOV : MonoBehaviour
     private float rotation;
     private float rotTime;
     private float maxrotTime;
+    public GameObject spwnp;
+    
 
     public void Initialize(float Rotspeed, float Movspeed, float Rotate, float Rottime)
     {
@@ -20,7 +22,17 @@ public class PrefabMOV : MonoBehaviour
     private void Update()
     {
         // Rotate the object towards the target rotation
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0f, rotation, 0f), rotateSpeed * Time.deltaTime);
+        if ((this.transform.localPosition.x > 200f) || (this.transform.localPosition.x < -200f) || (this.transform.localPosition.z > 200f) || (this.transform.localPosition.z < -200f))
+        {
+            transform.LookAt(spwnp.transform.position);
+        }
+        else
+        {
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0f, rotation, 0f), rotateSpeed * Time.deltaTime);
+        }
+        
+        
+       
 
         // Decrement the rotation timer
         rotTime -= Time.deltaTime;

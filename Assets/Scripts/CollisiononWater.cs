@@ -57,20 +57,20 @@ public class CollisiononWater : MonoBehaviour
     private float catchtime;
     private float catchspeed;
 
-
+    public TextMeshProUGUI Score_txt;
     public List<TextMeshPro> Frame_Text;
     public List<GameObject> FishOnFrame;
 
     public  int[] FishSaved = new int[7];
 
-
+    
    
 
 
     public pickuponplayer objpickup;
 
 
-
+    public int TotalFish ;
     
     private bool Cont=false;
 
@@ -187,13 +187,14 @@ public class CollisiononWater : MonoBehaviour
 
 
     }
+     
 
     public void Fishenable()
     {
         for(int i = 0;i<7;i++) 
         {
             Frame_Text[i].text = FishSaved[i] + " / 10";
-
+            
             if (FishSaved[i] >= 10)
             {
                 FishOnFrame[i].SetActive(true);
@@ -201,11 +202,12 @@ public class CollisiononWater : MonoBehaviour
 
             }
 
-
+            
         }
         
+        Score_txt.text = " = " + TotalFish;
     }
-
+    
 
     public void savefish()
     {
@@ -229,7 +231,7 @@ public class CollisiononWater : MonoBehaviour
             
         }
 
-
+        TotalFish = data.totalFish;
     }
 
 
@@ -240,7 +242,7 @@ public class CollisiononWater : MonoBehaviour
         
         
         FishSaved[i]++;
-        
+        TotalFish++;
 
     }
     

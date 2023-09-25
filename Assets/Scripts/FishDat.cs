@@ -7,6 +7,7 @@ using UnityEngine;
 public class FishDat 
 {
     public int[] fishdata = new int[7];
+    public int totalFish;
     
     public FishDat(CollisiononWater obj)
     {
@@ -14,7 +15,7 @@ public class FishDat
         {
             fishdata[i] = obj.FishSaved[i];
         }
-        
-        
+
+        totalFish = obj.TotalFish;
     }
 }
